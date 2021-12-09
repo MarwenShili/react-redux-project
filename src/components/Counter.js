@@ -1,7 +1,7 @@
 import classes from './Counter.module.css';
 import {useSelector, useDispatch} from 'react-redux'
 import useInput from './hooks/use-input';
-import { counterActions } from './store/index';
+import { counterActions } from './store/counter-Slice';
 
 
 const Counter = () => {
@@ -14,8 +14,8 @@ const Counter = () => {
 } = useInput(value => value.trim() !== '')
 
 
-  const counter = useSelector(state => state.counter)
-  const isShaw = useSelector(state => state.isShawCounter)
+  const counter = useSelector(state => state.count.counter)
+  const isShaw = useSelector(state => state.count.isShawCounter)
 
 
   const dispatch = useDispatch()
